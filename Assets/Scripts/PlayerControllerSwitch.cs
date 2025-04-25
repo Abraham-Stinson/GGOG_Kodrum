@@ -3,27 +3,35 @@ using UnityEngine.InputSystem;
 
 public class PlayerControllerSwitch : MonoBehaviour
 {
-    private PlayerInput playerInput;
+    public PlayerControllerScript player1Controller;
+    public PuzzlePlayerController player2Controller;
+    private PlayerInput playerInput1;
+    private PlayerInput playerInput2;
+    
 
-    private void Awake()
+    private void Start()
     {
-        playerInput = GetComponent<PlayerInput>();
+        playerInput1 = player1Controller.GetComponent<PlayerInput>();
+        playerInput2 = player2Controller.GetComponent<PlayerInput>();
+
+        
+
+        Debug.Log("devices: " + playerInput1.devices);
+        
+
+
     }
 
-    public void SetGamepad1()
+
+    public void SwitchControl()
     {
-        var gamepad = Gamepad.all.Count > 0 ? Gamepad.all[0] : null;
-        if (gamepad != null)
-        {
-            playerInput.SwitchCurrentControlScheme("Gamepad", gamepad);
-        }
+        InputDevice tempScheme1;
+        InputDevice tempScheme2;
+        tempScheme1 = playerInput1.devices[0];
+        tempScheme2 = playerInput2.devices[0];
+        playerInput1.SwitchCurrentControlScheme(tempScheme2);
+        playerInput2.SwitchCurrentControlScheme(tempScheme1);
+
     }
-    public void SetGamepad2()
-    {
-        var gamepad = Gamepad.all.Count > 1 ? Gamepad.all[1] : null;
-        if (gamepad != null)
-        {
-            playerInput.SwitchCurrentControlScheme("Gamepad", gamepad);
-        }
-    }
+
 }
