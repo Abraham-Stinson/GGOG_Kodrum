@@ -12,6 +12,7 @@ TagManager:
   - BoxCheckpoint
   - Box
   - PuzzleWin
+  - Item_Hub
   layers:
   - Default
   - TransparentFX

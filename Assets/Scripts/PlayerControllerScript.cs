@@ -1,4 +1,5 @@
 using NUnit.Framework;
+using UnityEditor;
 using UnityEngine;
 using UnityEngine.InputSystem;
 
@@ -23,6 +24,9 @@ public class PlayerControllerScript : MonoBehaviour
     [SerializeField] private float thrownForce=10f;
     [SerializeField] private GameObject itemDetector;
     [SerializeField] private GameObject item;
+    //[SerializeField] private GameObject itemPrefab;
+    [SerializeField] private GameObject itemHub;
+    [SerializeField] private bool hasTakenItemOnHub=false;
 
 
     private void Awake()
@@ -35,6 +39,7 @@ public class PlayerControllerScript : MonoBehaviour
     {
         item=GameObject.FindWithTag("Item");
         itemDetector=GameObject.FindWithTag("Item_Detector");
+        itemHub=GameObject.FindWithTag("Item_Hub");
         player1StartingDevice = playerInput.devices[0];
 
 
@@ -92,28 +97,41 @@ public class PlayerControllerScript : MonoBehaviour
 
     private void Interact(bool isInteract){
         if(isInteract){
-            if(item.GetComponent<itemScript>()!=null){
+            if(hasTakenItemOnHub){
+                if(item.GetComponent<itemScript>()!=null){
+                    if(!isCarrying&&item.GetComponent<itemScript>().isCollide){
+                        Debug.Log("Itemi aldı");
+                        item.GetComponent<SpriteRenderer>().enabled=false;
+                        item.GetComponent<BoxCollider2D>().enabled=false;                    
+                        isCarrying=true;
+                    }
+                    else if(isCarrying/*&&GameObject.FindWithTag("Item").GetComponent<itemScript>().isCollide*/){
+                        Debug.Log("Itemi bıraktı");
+                        item.GetComponent<SpriteRenderer>().enabled=true;
+                        item.GetComponent<BoxCollider2D>().enabled=true;
+                        //GameObject.FindWithTag("Item").gameObject.transform.position=new Vector3(0,2,0);
 
-                if(!isCarrying&&item.GetComponent<itemScript>().isCollide){
-                    Debug.Log("Itemi aldı");
-                    item.GetComponent<SpriteRenderer>().enabled=false;
-                    item.GetComponent<BoxCollider2D>().enabled=false;                    
+                        if(moveInput<0){
+                            item.gameObject.transform.position=new Vector3(this.gameObject.transform.position.x-0.5f,this.gameObject.transform.position.y);
+                            item.GetComponent<Rigidbody2D>().AddForce(Vector2.left * thrownForce, ForceMode2D.Impulse);
+                        }
+                        else if(moveInput>0){
+                            item.gameObject.transform.position=new Vector3(this.gameObject.transform.position.x+0.5f,this.gameObject.transform.position.y);
+                            item.GetComponent<Rigidbody2D>().AddForce(Vector2.right * thrownForce, ForceMode2D.Impulse);
+                        }
+                        //else item.gameObject.transform.position=new Vector3(this.gameObject.transform.position.x,this.gameObject.transform.position.y+0.5f);
+
+                        
+                        item.GetComponent<itemScript>().ChangeSprite();//SPRITE DEGİSECEK AMA DENEME
+                        isCarrying=false;
+                    }
+                }
+            }
+            else if(itemHub.GetComponent<itemHubScript>()!=null&&itemHub.GetComponent<itemHubScript>().isHubCollide){
+                    Debug.Log("Hubdan item aldı");
+                    Instantiate(item);
                     isCarrying=true;
-                }
-                else if(isCarrying/*&&GameObject.FindWithTag("Item").GetComponent<itemScript>().isCollide*/){
-                    Debug.Log("Itemi bıraktı");
-                    item.GetComponent<SpriteRenderer>().enabled=true;
-                    item.GetComponent<BoxCollider2D>().enabled=true;
-                    //GameObject.FindWithTag("Item").gameObject.transform.position=new Vector3(0,2,0);
-
-                    if(moveInput<0)item.gameObject.transform.position=new Vector3(this.gameObject.transform.position.x-0.5f,this.gameObject.transform.position.y);
-                    else if(moveInput>0)item.gameObject.transform.position=new Vector3(this.gameObject.transform.position.x+0.5f,this.gameObject.transform.position.y);
-                    //else item.gameObject.transform.position=new Vector3(this.gameObject.transform.position.x,this.gameObject.transform.position.y+0.5f);
-                    
-                    item.GetComponent<Rigidbody2D>().AddForce(Vector2.right * thrownForce, ForceMode2D.Impulse);
-                    item.GetComponent<itemScript>().ChangeSprite();//SPRITE DEGİSECEK AMA DENEME
-                    isCarrying=false;
-                }
+                    hasTakenItemOnHub=true;
             }
         }
     }
