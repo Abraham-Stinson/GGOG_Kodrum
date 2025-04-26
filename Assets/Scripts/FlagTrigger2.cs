@@ -1,8 +1,14 @@
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class FlagTrigger2 : MonoBehaviour
 {
     public GameObject player2Prefab;
+    [SerializeField] private ScoreManager scoreManager;
+    private void Start()
+    {
+        
+    }
     private void OnTriggerEnter2D(Collider2D collision)
     {
         if (collision.gameObject.CompareTag("Player"))
@@ -14,6 +20,7 @@ public class FlagTrigger2 : MonoBehaviour
                 pcs.currentItemSprite = null;
                 pcs.itemSpriteRenderer.sprite = null;
                 pcs.player2HasTakenItemFromHub = false;
+                scoreManager.AddScore(2);
             }
         }
     }
