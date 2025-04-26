@@ -50,6 +50,7 @@ public class InteractTrigger : MonoBehaviour
             {
                 Debug.Log("Handle Item");
                 currentObjectSprite = spriteData;
+                playerControllerScript.isCarryingItem = true;
                 playerControllerScript.currentItemSprite = currentObjectSprite;
                 itemSpriteRenderer.sprite = currentObjectSprite;
                 Destroy(obj);
