@@ -145,7 +145,8 @@ public class PlayerControllerScript : MonoBehaviour
 
     void CreateItem(GameObject obj){
         Instantiate(obj,transform.position,transform.rotation);
-        heldPosition.transform.SetParent(obj.transform,true);
+        obj.transform.SetParent(heldPosition,true);
+        obj.transform.position=Vector3.zero;
         isCarrying=true;
     }
 }
