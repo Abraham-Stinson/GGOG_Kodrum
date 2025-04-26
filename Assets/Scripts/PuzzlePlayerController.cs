@@ -35,6 +35,7 @@ public class PuzzlePlayerController : MonoBehaviour
         {
             puzzleManager.ResetPuzzle();
         }
+        playerControllerSwitch.SwitchControl();
     }
 
     private void Move()
