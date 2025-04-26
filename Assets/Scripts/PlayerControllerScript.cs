@@ -8,6 +8,7 @@ using UnityEngine.InputSystem;
 [RequireComponent(typeof(Rigidbody2D))]
 public class PlayerControllerScript : MonoBehaviour
 {
+    public Animator animatior;
     [Header("Movement Settings")]
     public float moveSpeed = 5f;
     public float jumpForce = 10f;
@@ -54,6 +55,8 @@ public class PlayerControllerScript : MonoBehaviour
 
     private void Update()
     {
+        //Animation
+        Animation();
         
     }
 
@@ -109,6 +112,7 @@ public class PlayerControllerScript : MonoBehaviour
     public void OnMove(InputValue value)
     {
         moveInput = value.Get<float>();
+
     }
 
     public void OnJump(InputValue value)
@@ -162,9 +166,22 @@ public class PlayerControllerScript : MonoBehaviour
     }
     
 
-    
+    void Animation(){
+        animatior.SetFloat("moveInput",Math.Abs(moveInput));
+        if(rb.linearVelocity.y>0.1){
+            animatior.SetBool("isJumping",true);
+        }
+        else{
+            animatior.SetBool("isJumping",false);
+        }
 
-
-
+        if(rb.linearVelocity.y<-0.1){
+            animatior.SetBool("isFalling",true);
+        }
+        else{
+            animatior.SetBool("isFalling",false);
+        }
+        Debug.Log(rb.linearVelocity.y);
+    }
 
 }

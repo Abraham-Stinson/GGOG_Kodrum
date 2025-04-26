@@ -3,7 +3,7 @@ using UnityEngine;
 public class Box : MonoBehaviour
 {
     private PuzzleManager manager;
-
+    [SerializeField]private PlayerControllerSwitch playerControllerSwitch;
     private void Start()
     {
         
@@ -17,6 +17,8 @@ public class Box : MonoBehaviour
                 Debug.Log("null");
             }
             manager.SpawnRandomPuzzle();
+            playerControllerSwitch.SwitchControl();
+            
         }
     }
 }
