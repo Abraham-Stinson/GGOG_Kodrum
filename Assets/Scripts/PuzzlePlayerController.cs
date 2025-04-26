@@ -33,7 +33,7 @@ public class PuzzlePlayerController : MonoBehaviour
         //placeholder code to test sw�tch
         if (value.isPressed)
         {
-            puzzleManager.ResetPuzzle();
+            playerControllerSwitch.SwitchControl();
         }
         playerControllerSwitch.SwitchControl();
     }

@@ -19,43 +19,61 @@ public class InteractTrigger : MonoBehaviour
 
     public void DetectItem()
     {
-        Vector2 detectionPoint = (Vector2)transform.position + detectionOffset;
+        Debug.Log("Detecting item");
+        Vector2 detectionPoint = (Vector2)transform.position + (Vector2)(transform.rotation * detectionOffset);
+
         Collider2D hit = Physics2D.OverlapCircle(detectionPoint, detectionRadius, detectionLayer);
 
         if (hit != null)
         {
+            Debug.Log(hit.gameObject.name);
             HandleItem(hit.gameObject);
         }
-        PlayerControllerScript.itemTrigger = false;
+
     }
 
     void HandleItem(GameObject obj)
     {
-        Sprite spriteData = obj.GetComponent<Sprite>();
+        Sprite spriteData = obj.GetComponent<SpriteRenderer>().sprite;
         if (!playerControllerScript.isCarryingItem)
         {
-            if (obj.CompareTag("item"))
+            if (obj.CompareTag("Item"))
             {
+                Debug.Log("Handle Item");
                 currentObjectSprite = spriteData;
+                playerControllerScript.currentItemSprite = currentObjectSprite;
+                itemSpriteRenderer.sprite = currentObjectSprite;
                 Destroy(obj);
             }
-            else if (obj.CompareTag("item_hub"))
+            else if (obj.CompareTag("Item_Hub"))
             {
-                if (playerControllerScript.player1StartingDevice == playerInput.devices[0] && playerControllerScript.player1HasTakenItemFromHub)
+                Debug.Log("Item Hub detected");
+                if (playerControllerScript.player1StartingDevice == playerInput.devices[0] && !playerControllerScript.player1HasTakenItemFromHub)
                 {
                     playerControllerScript.player1HasTakenItemFromHub = true;
-                    currentObjectSprite = itemPlayer1.GetComponent<Sprite>();
+                    playerControllerScript.isCarryingItem = true;
+                    currentObjectSprite = itemPlayer1.GetComponent<SpriteRenderer>().sprite;
+                    playerControllerScript.currentItemSprite = currentObjectSprite;
                     itemSpriteRenderer.sprite = currentObjectSprite;
                 }
-                else if (playerControllerScript.player1StartingDevice == playerInput.devices[0] && playerControllerScript.player1HasTakenItemFromHub)
+                else if (playerControllerScript.player1StartingDevice != playerInput.devices[0] && !playerControllerScript.player1HasTakenItemFromHub)
                 {
-                    playerControllerScript.player1HasTakenItemFromHub = true;
-                    currentObjectSprite = itemPlayer2.GetComponent<Sprite>();
+                    playerControllerScript.isCarryingItem = true;
+                    playerControllerScript.player2HasTakenItemFromHub = true;
+                    currentObjectSprite = itemPlayer2.GetComponent<SpriteRenderer>().sprite;
+                    playerControllerScript.currentItemSprite = currentObjectSprite;
                     itemSpriteRenderer.sprite = currentObjectSprite;
                 }
             }
         }
         
+    }
+
+    private void OnDrawGizmosSelected()
+    {
+        Gizmos.color = Color.green;
+        Vector2 detectionPoint = (Vector2)transform.position + detectionOffset;
+        Gizmos.DrawWireSphere(detectionPoint, detectionRadius);
     }
 
 
