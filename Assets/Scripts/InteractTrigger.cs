@@ -56,7 +56,7 @@ public class InteractTrigger : MonoBehaviour
                     playerControllerScript.currentItemSprite = currentObjectSprite;
                     itemSpriteRenderer.sprite = currentObjectSprite;
                 }
-                else if (playerControllerScript.player1StartingDevice != playerInput.devices[0] && !playerControllerScript.player1HasTakenItemFromHub)
+                else if (playerControllerScript.player1StartingDevice != playerInput.devices[0] && !playerControllerScript.player2HasTakenItemFromHub)
                 {
                     playerControllerScript.isCarryingItem = true;
                     playerControllerScript.player2HasTakenItemFromHub = true;
