@@ -955,11 +955,14 @@ MonoBehaviour:
   groundCheckRadius: 0.2
   playerInput: {fileID: 1166027055}
   thrownForce: 10
-  itemPrefab: {fileID: 3814288022594262016, guid: 7b9786dac065a94458019c96d17d6142, type: 3}
+  happyItemPrefab: {fileID: 3814288022594262016, guid: 7b9786dac065a94458019c96d17d6142, type: 3}
+  sadItemPrefab: {fileID: 3814288022594262016, guid: d596be50bc06211408f0886ee3817529, type: 3}
   itemWithTag: {fileID: 0}
   itemDetector: {fileID: 907802249}
-  itemHub: {fileID: 0}
-  hasTakenItemOnHub: 0
+  itemHub: {fileID: 184673813}
+  heldPosition: {fileID: 1633678134}
+  hasPlayer1TakenItemOnHub: 0
+  hasPlayer2TakenItemOnHub: 0
 --- !u!212 &1166027057
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -1030,6 +1033,7 @@ Transform:
   m_Children:
   - {fileID: 2015078940}
   - {fileID: 907802250}
+  - {fileID: 1633678134}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1443781267
@@ -1078,6 +1082,37 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   player1Controller: {fileID: 1166027056}
   player2Controller: {fileID: 47420716}
+--- !u!1 &1633678133
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1633678134}
+  m_Layer: 0
+  m_Name: HeldPosition
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1633678134
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1633678133}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 1166027058}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &2015078939
 GameObject:
   m_ObjectHideFlags: 0
