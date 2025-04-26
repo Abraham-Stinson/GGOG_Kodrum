@@ -11,7 +11,8 @@ public class PlayerControllerScript : MonoBehaviour
     public Transform groundCheck;
     public LayerMask groundLayer;
     public float groundCheckRadius = 0.2f;
-
+    public InputDevice player1StartingDevice;
+    public PlayerInput playerInput;
     private SpriteRenderer spriteRenderer;
     private Rigidbody2D rb;
     private float moveInput;
@@ -22,6 +23,8 @@ public class PlayerControllerScript : MonoBehaviour
     [SerializeField] private float thrownForce=10f;
     [SerializeField] private GameObject itemDetector;
     [SerializeField] private GameObject item;
+
+
     private void Awake()
     {
         rb = GetComponent<Rigidbody2D>();
@@ -32,6 +35,9 @@ public class PlayerControllerScript : MonoBehaviour
     {
         item=GameObject.FindWithTag("Item");
         itemDetector=GameObject.FindWithTag("Item_Detector");
+        player1StartingDevice = playerInput.devices[0];
+
+
     }
 
     // Called by the Input System

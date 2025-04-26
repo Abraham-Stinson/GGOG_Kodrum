@@ -6,6 +6,12 @@ TagManager:
   tags:
   - Item
   - Item_Detector
+  - Puzzle
+  - PuzzlePlayer
+  - PlayerCheckpoint
+  - BoxCheckpoint
+  - Box
+  - PuzzleWin
   layers:
   - Default
   - TransparentFX

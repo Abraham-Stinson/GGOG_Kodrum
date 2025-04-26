@@ -6,11 +6,18 @@ public class PuzzlePlayerController : MonoBehaviour
 {
     [Header("Movement Settings")]
     public float moveSpeed = 5f;
+    public PlayerInput playerInput;
+    public InputDevice player2StartingDevice;
     private Vector2 moveInput;
     public PlayerControllerSwitch playerControllerSwitch;
+    public PuzzleManager puzzleManager;
 
 
-
+    private void Start()
+    {
+        player2StartingDevice = playerInput.devices[0];
+        
+    }
     void Update()
     {
         Move();
@@ -26,7 +33,7 @@ public class PuzzlePlayerController : MonoBehaviour
         //placeholder code to test sw�tch
         if (value.isPressed)
         {
-            playerControllerSwitch.SwitchControl();
+            puzzleManager.ResetPuzzle();
         }
     }
 
