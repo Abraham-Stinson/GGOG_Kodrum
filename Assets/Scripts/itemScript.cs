@@ -32,6 +32,8 @@ public class itemScript : MonoBehaviour
     }
     public void ChangeSprite()
     {
+
+        Debug.Log("Sprite değiştirmeye girdi ve sprite değiştir");//OYUNCU EŞYAYI TESLİM ETTİKTEN SONRA HUBDAN INTERACT YAPTIĞI ZAMAN SPRITE DEGİSECEK
         if (spriteArray.Length == 0 || spriteRenderer == null)
         {
             Debug.LogWarning("Sprite array veya SpriteRenderer eksik!");

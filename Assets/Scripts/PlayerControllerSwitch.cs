@@ -13,13 +13,6 @@ public class PlayerControllerSwitch : MonoBehaviour
     {
         playerInput1 = player1Controller.GetComponent<PlayerInput>();
         playerInput2 = player2Controller.GetComponent<PlayerInput>();
-
-        
-
-        Debug.Log("devices: " + playerInput1.devices);
-        
-
-
     }
 
 

@@ -11,7 +11,8 @@ public class PlayerControllerScript : MonoBehaviour
     public Transform groundCheck;
     public LayerMask groundLayer;
     public float groundCheckRadius = 0.2f;
-
+    public InputDevice player1StartingDevice;
+    public PlayerInput playerInput;
     private SpriteRenderer spriteRenderer;
     private Rigidbody2D rb;
     private float moveInput;
@@ -22,6 +23,8 @@ public class PlayerControllerScript : MonoBehaviour
     [SerializeField] private float thrownForce=10f;
     [SerializeField] private GameObject itemDetector;
     [SerializeField] private GameObject item;
+
+
     private void Awake()
     {
         rb = GetComponent<Rigidbody2D>();
@@ -32,6 +35,9 @@ public class PlayerControllerScript : MonoBehaviour
     {
         item=GameObject.FindWithTag("Item");
         itemDetector=GameObject.FindWithTag("Item_Detector");
+        player1StartingDevice = playerInput.devices[0];
+
+
     }
 
     // Called by the Input System
@@ -91,17 +97,21 @@ public class PlayerControllerScript : MonoBehaviour
                 if(!isCarrying&&item.GetComponent<itemScript>().isCollide){
                     Debug.Log("Itemi aldı");
                     item.GetComponent<SpriteRenderer>().enabled=false;
-                    item.GetComponent<CapsuleCollider2D>().enabled=false;                    
+                    item.GetComponent<BoxCollider2D>().enabled=false;                    
                     isCarrying=true;
                 }
                 else if(isCarrying/*&&GameObject.FindWithTag("Item").GetComponent<itemScript>().isCollide*/){
                     Debug.Log("Itemi bıraktı");
                     item.GetComponent<SpriteRenderer>().enabled=true;
-                    item.GetComponent<CapsuleCollider2D>().enabled=true;
+                    item.GetComponent<BoxCollider2D>().enabled=true;
                     //GameObject.FindWithTag("Item").gameObject.transform.position=new Vector3(0,2,0);
-                    item.gameObject.transform.position=new Vector3(this.gameObject.transform.position.x+0.5f,this.gameObject.transform.position.y);
+
+                    if(moveInput<0)item.gameObject.transform.position=new Vector3(this.gameObject.transform.position.x-0.5f,this.gameObject.transform.position.y);
+                    else if(moveInput>0)item.gameObject.transform.position=new Vector3(this.gameObject.transform.position.x+0.5f,this.gameObject.transform.position.y);
+                    //else item.gameObject.transform.position=new Vector3(this.gameObject.transform.position.x,this.gameObject.transform.position.y+0.5f);
+                    
                     item.GetComponent<Rigidbody2D>().AddForce(Vector2.right * thrownForce, ForceMode2D.Impulse);
-                    //item.GetComponent<itemScript>().ChangeSprite();//SPRITE DEGİSECEK AMA DENEME
+                    item.GetComponent<itemScript>().ChangeSprite();//SPRITE DEGİSECEK AMA DENEME
                     isCarrying=false;
                 }
             }
