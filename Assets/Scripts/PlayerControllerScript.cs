@@ -19,34 +19,31 @@ public class PlayerControllerScript : MonoBehaviour
     public InputDevice player1StartingDevice;
     public PlayerInput playerInput;
 
-    public SpriteRenderer itemSpriteRenderer;
-    private Sprite currentItemSprite;
-    private bool isPlayer1 = true;
-    public GameObject itemPlayer1;
-    public GameObject itemPlayer2;
+    private float thrownForce = 10f;
 
 
-    private SpriteRenderer spriteRenderer;
+    private bool isJumping;
+    private float moveInput;
+
+
+    [Header("Interact")]
+    public InteractTrigger interactTrigger;
+    public bool isCarryingItem = false;
+    public bool player1HasTakenItemFromHub = false;
+    public bool player2HasTakenItemFromHub = false;
+    
     private Rigidbody2D rb;
 
-    private float moveInput;
-    private bool isJumping;
-    private InteractTrigger interactTrigger;
-    [Header("Interact")]
-    [SerializeField] public bool isCarryingItem = false;
-    [SerializeField] private float thrownForce=10f;
-    [SerializeField] private GameObject itemHub;
-    [SerializeField] public bool player1HasTakenItemFromHub = false;
-    [SerializeField] public bool player2HasTakenItemFromHub = false;
-
-    public BoxCollider2D triggerCollider;
-    public bool itemTriggerActive = false;
+    [Header("Item")]
+    public Sprite currentItemSprite;
+    public GameObject itemPlayer1;
+    public GameObject itemPlayer2;
+    public SpriteRenderer itemSpriteRenderer;
 
     private void Awake()
     {
         rb = GetComponent<Rigidbody2D>();
-        spriteRenderer = GetComponent<SpriteRenderer>();
-        interactTrigger = GetComponent<InteractTrigger>();
+
 
 
     }
@@ -57,10 +54,7 @@ public class PlayerControllerScript : MonoBehaviour
 
     private void Update()
     {
-        if (itemTriggerActive) {
-            
-            ActivateTrigger();
-        }
+        
     }
 
     private void ActivateTrigger()
@@ -70,7 +64,7 @@ public class PlayerControllerScript : MonoBehaviour
     }
     public void OnThrow(InputValue value)
     {
-        if (value.isPressed && IsGrounded())
+        if (value.isPressed)
         {
             Throw();
         }
@@ -93,7 +87,7 @@ public class PlayerControllerScript : MonoBehaviour
 
         }
 
-        itemSpriteRenderer.enabled = false;
+        itemSpriteRenderer.sprite = null;
         currentItemSprite = null;
     }
 
@@ -114,9 +108,9 @@ public class PlayerControllerScript : MonoBehaviour
     {
         if (value.isPressed)
         {
-            itemTriggerActive = true;
+            ActivateTrigger();
             Debug.Log("Trigger Activated");
-            triggerCollider.enabled = true;
+
         }
     }
     private void FixedUpdate()
