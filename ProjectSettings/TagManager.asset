@@ -4,7 +4,6 @@
 TagManager:
   serializedVersion: 3
   tags:
-  - Item
   - Item_Detector
   - Puzzle
   - PuzzlePlayer
@@ -13,6 +12,8 @@ TagManager:
   - Box
   - PuzzleWin
   - Item_Hub
+  - ItemPlayer1
+  - ItemPlayer2
   layers:
   - Default
   - TransparentFX
@@ -21,7 +22,7 @@ TagManager:
   - Water
   - UI
   - Player
-  - 
+  - Detection
   - 
   - 
   - 
