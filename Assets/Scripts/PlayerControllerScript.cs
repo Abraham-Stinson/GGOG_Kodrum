@@ -21,7 +21,7 @@ public class PlayerControllerScript : MonoBehaviour
 
     private float thrownForce = 10f;
 
-
+    public bool facingRight = true;
     private bool isJumping;
     private float moveInput;
 
@@ -76,13 +76,28 @@ public class PlayerControllerScript : MonoBehaviour
         if (currentItemSprite == itemPlayer1.GetComponent<SpriteRenderer>().sprite)
         {
             GameObject throwItem = Instantiate(itemPlayer1, itemSpriteRenderer.transform.position, Quaternion.identity);
-            throwItem.GetComponent<Rigidbody2D>().AddForce(Vector2.right * thrownForce, ForceMode2D.Impulse);
+            if (facingRight)
+            {
+                throwItem.GetComponent<Rigidbody2D>().AddForce(Vector2.right * thrownForce, ForceMode2D.Impulse);
+            }
+            else
+            {
+                throwItem.GetComponent<Rigidbody2D>().AddForce(Vector2.left * thrownForce, ForceMode2D.Impulse);
+            }
+            
             isCarryingItem = false;
         }
         if (currentItemSprite == itemPlayer2.GetComponent<SpriteRenderer>().sprite)
         {
             GameObject throwItem = Instantiate(itemPlayer2, itemSpriteRenderer.transform.position, Quaternion.identity);
-            throwItem.GetComponent<Rigidbody2D>().AddForce(Vector2.right * thrownForce, ForceMode2D.Impulse);
+            if (facingRight)
+            {
+                throwItem.GetComponent<Rigidbody2D>().AddForce(Vector2.right * thrownForce, ForceMode2D.Impulse);
+            }
+            else
+            {
+                throwItem.GetComponent<Rigidbody2D>().AddForce(Vector2.left * thrownForce, ForceMode2D.Impulse);
+            }
             isCarryingItem = false;
 
         }
@@ -118,9 +133,11 @@ public class PlayerControllerScript : MonoBehaviour
         // Move the player
         if (moveInput < 0){
             gameObject.transform.eulerAngles = new Vector3(0, -180, 0);
+            facingRight = false;
         }
         else if (moveInput > 0){
             gameObject.transform.eulerAngles = new Vector3(0, 0, 0);
+            facingRight = true;
         }
         rb.linearVelocity = new Vector2(moveInput * moveSpeed, rb.linearVelocity.y);
 

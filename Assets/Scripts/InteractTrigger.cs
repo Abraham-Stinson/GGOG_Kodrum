@@ -19,8 +19,17 @@ public class InteractTrigger : MonoBehaviour
 
     public void DetectItem()
     {
+        Vector2 detectionPoint = new Vector2(0,0);
         Debug.Log("Detecting item");
-        Vector2 detectionPoint = (Vector2)transform.position + (Vector2)(transform.rotation * detectionOffset);
+        if (playerControllerScript.facingRight)
+        {
+            detectionPoint = (Vector2)transform.position + detectionOffset;
+
+        }
+        else
+        {
+            detectionPoint = (Vector2)transform.position - detectionOffset;
+        }
 
         Collider2D hit = Physics2D.OverlapCircle(detectionPoint, detectionRadius, detectionLayer);
 
