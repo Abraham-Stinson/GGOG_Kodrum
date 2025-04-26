@@ -253,7 +253,7 @@ MonoBehaviour:
   moveSpeed: 5
   playerInput: {fileID: 47420713}
   playerControllerSwitch: {fileID: 1443781269}
-  puzzleManager: {fileID: 0}
+  puzzleManager: {fileID: 472872257}
 --- !u!1 &184673813
 GameObject:
   m_ObjectHideFlags: 0

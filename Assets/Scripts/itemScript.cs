@@ -16,18 +16,27 @@ public class itemScript : MonoBehaviour
 
     void OnTriggerEnter2D(Collider2D collider)
     {
-        if(collider.CompareTag("Item_Detector")) isCollide = true;
+        if(collider.CompareTag("Item_Detector")) {
+            isCollide = true;
+            tag="Item";
+        }
         
     }
 
     void OnTriggerStay2D(Collider2D collider)
     {
-        if(collider.CompareTag("Item_Detector")) isCollide = true;
+        if(collider.CompareTag("Item_Detector")){
+            isCollide = true;
+            tag="Item";
+        } 
     }
 
     void OnTriggerExit2D(Collider2D collider)
     {   
-        if(collider.CompareTag("Item_Detector")) isCollide = false;
+        if(collider.CompareTag("Item_Detector")){
+            isCollide = false;
+            tag="Item";
+        } 
         
     }
     public void ChangeSprite()

@@ -71,6 +71,12 @@ public class PlayerControllerScript : MonoBehaviour
             Interact();
         }
     }
+    void Update()
+    {
+        if(itemWithTag==null){
+            itemWithTag=GameObject.FindWithTag("Item");
+        }
+    }
     private void FixedUpdate()
     {
         // Move the player
@@ -101,52 +107,60 @@ public class PlayerControllerScript : MonoBehaviour
 
 
     private void Interact(){
-        itemWithTag=GameObject.FindWithTag("Item");
+       
         if(!isCarrying){
             if(player1StartingDevice == playerInput.devices[0]&&!hasPlayer1TakenItemOnHub&&itemHub.GetComponent<itemHubScript>().isHubCollide){
                 CreateItem(happyItemPrefab);//create item and set parentt
                 hasPlayer1TakenItemOnHub=true;
                 Debug.Log("Itemi oluşturdu ve iyi item aldı");
             }
-            else if(player1StartingDevice == playerInput.devices[0]&&!hasPlayer1TakenItemOnHub&&itemHub.GetComponent<itemHubScript>().isHubCollide){
+            else if(player1StartingDevice != playerInput.devices[0]&&!hasPlayer2TakenItemOnHub&&itemHub.GetComponent<itemHubScript>().isHubCollide){
                 CreateItem(sadItemPrefab);//create item and set parentt
                 hasPlayer2TakenItemOnHub=true;
                 Debug.Log("Itemi oluşturdu ve kötü item aldı");
             }
-            else if(itemWithTag.GetComponent<itemScript>().isCollide){
-                itemWithTag.transform.SetParent(heldPosition,true);
+            else if(itemWithTag.GetComponent<itemScript>()!=null&&itemWithTag.GetComponent<itemScript>().isCollide){
+                
+                itemWithTag.transform.SetParent(heldPosition,false);
+                itemWithTag.transform.localPosition = Vector3.zero;
                 isCarrying=true;
+                itemWithTag.GetComponent<Rigidbody2D>().simulated=false;
                 Debug.Log("Itemi aldı");
             }
         }
         
         else if(isCarrying){
-            itemWithTag=GameObject.FindWithTag("Item");
+            
             itemWithTag.transform.SetParent(null);
+            itemWithTag.GetComponent<Rigidbody2D>().simulated=true;
+            isCarrying=false;
             Debug.Log("Itemi bıraktı");
+            itemWithTag.GetComponent<itemScript>().ChangeSprite();//SPRITE DEGİSECEK AMA DENEME
             if(moveInput<0){
                 itemWithTag.gameObject.transform.position=new Vector3(this.gameObject.transform.position.x-0.5f,this.gameObject.transform.position.y);
                 itemWithTag.GetComponent<Rigidbody2D>().AddForce(Vector2.left * thrownForce, ForceMode2D.Impulse);
+                
             }
             else if(moveInput>0){
                 itemWithTag.gameObject.transform.position=new Vector3(this.gameObject.transform.position.x+0.5f,this.gameObject.transform.position.y);
                 itemWithTag.GetComponent<Rigidbody2D>().AddForce(Vector2.right * thrownForce, ForceMode2D.Impulse);
-                }
+            }
             else{
                 itemWithTag.gameObject.transform.position=new Vector3(this.gameObject.transform.position.x,this.gameObject.transform.position.y+0.5f);
                 itemWithTag.GetComponent<Rigidbody2D>().AddForce(Vector2.up * thrownForce, ForceMode2D.Impulse);
             }            
         }
-        itemWithTag.GetComponent<itemScript>().ChangeSprite();//SPRITE DEGİSECEK AMA DENEME
-        isCarrying=false;
+        
                     
     }
     
 
-    void CreateItem(GameObject obj){
-        Instantiate(obj,transform.position,transform.rotation);
-        obj.transform.SetParent(heldPosition,true);
-        obj.transform.position=Vector3.zero;
+    void CreateItem(GameObject prefab){
+        GameObject newItem = Instantiate(prefab, transform.position, transform.rotation); // yeni objeyi yakala
+        newItem.transform.SetParent(heldPosition, false);
+        newItem.transform.localPosition = Vector3.zero;
+        newItem.GetComponent<Rigidbody2D>().simulated=false;
         isCarrying=true;
+        //itemWithTag=GameObject.FindWithTag("Helding");
     }
 }
