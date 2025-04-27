@@ -1,4 +1,5 @@
 using System.Collections;
+using UnityEditor.Animations;
 using UnityEngine;
 using UnityEngine.InputSystem;
 
@@ -11,6 +12,8 @@ public class PlayerControllerSwitch : MonoBehaviour
     private PlayerInput playerInput1;
     private PlayerInput playerInput2;
     [SerializeField]private float waitingSeconds=0.4f;
+    public AnimatorController hoodieOnAnimations;
+    public AnimatorController hoodieOffAnimations;
     
 
     private void Start()
@@ -37,15 +40,31 @@ public class PlayerControllerSwitch : MonoBehaviour
 
         Animator animator=player1Controller.GetComponent<Animator>();
         if(player1StartingDevice==playerInput1.devices[0]){
-            animator.SetBool("isFallingHoodieOff", false);
-            animator.SetBool("isJumpFallingingHoodieOn", false);
+            //animator.SetBool("isFallingHoodieOff", false);
+            //animator.SetBool("isJumpFallingingHoodieOn", false);
             animator.SetTrigger("Hoodie_Off");
+            if (player1Controller.animator.runtimeAnimatorController == hoodieOffAnimations)
+            {
+                player1Controller.animator.runtimeAnimatorController = hoodieOnAnimations;
+            }
+            else if (player1Controller.animator.runtimeAnimatorController == hoodieOnAnimations)
+            {
+                player1Controller.animator.runtimeAnimatorController = hoodieOffAnimations;
+            }
             
         } 
         else{
-            animator.SetBool("isFallingHoodieOff", false);
-            animator.SetBool("isFallingHoodieOff", false);
+            //animator.SetBool("isFallingHoodieOff", false);
+            //animator.SetBool("isFallingHoodieOff", false);
             animator.SetTrigger("Hoodie_On");
+            if (player1Controller.animator.runtimeAnimatorController == hoodieOffAnimations)
+            {
+                player1Controller.animator.runtimeAnimatorController = hoodieOnAnimations;
+            }
+            else if (player1Controller.animator.runtimeAnimatorController == hoodieOnAnimations)
+            {
+                player1Controller.animator.runtimeAnimatorController = hoodieOffAnimations;
+            }
         } 
         StartCoroutine(SwitchBreak(animator));
         
@@ -55,8 +74,8 @@ public class PlayerControllerSwitch : MonoBehaviour
         yield return new WaitForSeconds(waitingSeconds);
         
         animator.ResetTrigger("SwitchOn");
-        animator.ResetTrigger("Hoodie_On");
-        animator.ResetTrigger("Hoodie_Off");
+        /*animator.ResetTrigger("Hoodie_On");
+        animator.ResetTrigger("Hoodie_Off");*/
 
         player1Controller.enabled=true;
         player2Controller.enabled=true;

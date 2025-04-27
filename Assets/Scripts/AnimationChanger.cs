@@ -1,8 +1,17 @@
+using UnityEditor.Animations;
 using UnityEngine;
 
 public class AnimationChanger : MonoBehaviour
 {
-    public void AnimationChange(){
+    private PlayerControllerScript playerControllerScript;
+
+    private void Start()
+    {
+        playerControllerScript = GetComponent<PlayerControllerScript>();
+    }
+
+    public void AnimationChange()
+    {
         GetComponent<Animator>().SetTrigger("SwitchOn");
     }
 }
