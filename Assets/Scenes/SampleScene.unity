@@ -1790,7 +1790,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1b33e7ef8049c084e81494db1fe4be86, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  animatior: {fileID: 1166027060}
+  animator: {fileID: 1166027060}
   hoodieOn: 0
   moveSpeed: 5
   jumpForce: 10
@@ -2440,6 +2440,8 @@ MonoBehaviour:
   player1Controller: {fileID: 1166027056}
   player2Controller: {fileID: 47420716}
   waitingSeconds: 0.4
+  hoodieOnAnimations: {fileID: 9100000, guid: 75c223d122cfdc7409fd0e4f2a213090, type: 2}
+  hoodieOffAnimations: {fileID: 9100000, guid: 9c90cb1bb683a3e4c94ed6301c5dab42, type: 2}
 --- !u!1 &1483471543
 GameObject:
   m_ObjectHideFlags: 0
