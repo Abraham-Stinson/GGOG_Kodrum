@@ -1,13 +1,25 @@
 fileFormatVersion: 2
-guid: 2be2881ba44de69488d69d05b6e365c9
+guid: e671ef23f38472c4b9917a2505a230dd
 TextureImporter:
   internalIDToNameTable:
   - first:
-      213: -7352249722563552029
-    second: item_spot_0
+      213: -7164842536867580292
+    second: skor_refrance_0
   - first:
-      213: 2149215236595419214
-    second: item_spot_1
+      213: 2647111025694000222
+    second: skor_refrance_1
+  - first:
+      213: 6658852599766403621
+    second: skor_refrance_2
+  - first:
+      213: -827773880617210124
+    second: skor_refrance_3
+  - first:
+      213: -6166707526740892737
+    second: skor_refrance_4
+  - first:
+      213: 2184039156519337244
+    second: skor_refrance_5
   externalObjects: {}
   serializedVersion: 13
   mipmaps:
@@ -40,7 +52,7 @@ TextureImporter:
   maxTextureSize: 2048
   textureSettings:
     serializedVersion: 2
-    filterMode: 1
+    filterMode: 0
     aniso: 1
     mipBias: 0
     wrapU: 1
@@ -49,12 +61,12 @@ TextureImporter:
   nPOTScale: 0
   lightmap: 0
   compressionQuality: 50
-  spriteMode: 2
+  spriteMode: 1
   spriteExtrude: 1
   spriteMeshType: 1
   alignment: 0
   spritePivot: {x: 0.5, y: 0.5}
-  spritePixelsToUnits: 100
+  spritePixelsToUnits: 32
   spriteBorder: {x: 0, y: 0, z: 0, w: 0}
   spriteGenerateFallbackPhysicsShape: 1
   alphaUsage: 1
@@ -75,10 +87,10 @@ TextureImporter:
   platformSettings:
   - serializedVersion: 4
     buildTarget: DefaultTexturePlatform
-    maxTextureSize: 2048
+    maxTextureSize: 8192
     resizeAlgorithm: 0
     textureFormat: -1
-    textureCompression: 1
+    textureCompression: 2
     compressionQuality: 50
     crunchedCompression: 0
     allowsAlphaSplitting: 0
@@ -88,32 +100,6 @@ TextureImporter:
     forceMaximumCompressionQuality_BC6H_BC7: 0
   - serializedVersion: 4
     buildTarget: Standalone
-    maxTextureSize: 2048
-    resizeAlgorithm: 0
-    textureFormat: -1
-    textureCompression: 1
-    compressionQuality: 50
-    crunchedCompression: 0
-    allowsAlphaSplitting: 0
-    overridden: 0
-    ignorePlatformSupport: 0
-    androidETC2FallbackOverride: 0
-    forceMaximumCompressionQuality_BC6H_BC7: 0
-  - serializedVersion: 4
-    buildTarget: WebGL
-    maxTextureSize: 2048
-    resizeAlgorithm: 0
-    textureFormat: -1
-    textureCompression: 1
-    compressionQuality: 50
-    crunchedCompression: 0
-    allowsAlphaSplitting: 0
-    overridden: 0
-    ignorePlatformSupport: 0
-    androidETC2FallbackOverride: 0
-    forceMaximumCompressionQuality_BC6H_BC7: 0
-  - serializedVersion: 4
-    buildTarget: WindowsStoreApps
     maxTextureSize: 2048
     resizeAlgorithm: 0
     textureFormat: -1
@@ -138,17 +124,30 @@ TextureImporter:
     ignorePlatformSupport: 0
     androidETC2FallbackOverride: 0
     forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: WebGL
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
   spriteSheet:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: item_spot_0
+      name: skor_refrance_0
       rect:
         serializedVersion: 2
-        x: 1
-        y: 0
-        width: 29
-        height: 28
+        x: 59
+        y: 59
+        width: 254
+        height: 302
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -157,20 +156,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: 3ec92aac4df87f990800000000000000
-      internalID: -7352249722563552029
+      spriteID: c7636667cad519c90800000000000000
+      internalID: -7164842536867580292
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: item_spot_1
+      name: skor_refrance_1
       rect:
         serializedVersion: 2
-        x: 33
-        y: 0
-        width: 31
-        height: 30
+        x: 335
+        y: 59
+        width: 254
+        height: 302
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -179,8 +178,96 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: e488023eedb83dd10800000000000000
-      internalID: 2149215236595419214
+      spriteID: e54c28fe37d6cb420800000000000000
+      internalID: 2647111025694000222
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: skor_refrance_2
+      rect:
+        serializedVersion: 2
+        x: 611
+        y: 59
+        width: 254
+        height: 302
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 52a43ccc82ff86c50800000000000000
+      internalID: 6658852599766403621
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: skor_refrance_3
+      rect:
+        serializedVersion: 2
+        x: 2975
+        y: 59
+        width: 254
+        height: 302
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 4fee6739a082384f0800000000000000
+      internalID: -827773880617210124
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: skor_refrance_4
+      rect:
+        serializedVersion: 2
+        x: 3251
+        y: 59
+        width: 254
+        height: 302
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: fb3a1e25d247b6aa0800000000000000
+      internalID: -6166707526740892737
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: skor_refrance_5
+      rect:
+        serializedVersion: 2
+        x: 3527
+        y: 59
+        width: 254
+        height: 302
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: c1df0e39a044f4e10800000000000000
+      internalID: 2184039156519337244
       vertices: []
       indices: 
       edges: []
@@ -189,7 +276,7 @@ TextureImporter:
     customData: 
     physicsShape: []
     bones: []
-    spriteID: 
+    spriteID: 5e97eb03825dee720800000000000000
     internalID: 0
     vertices: []
     indices: 
@@ -199,8 +286,12 @@ TextureImporter:
     spriteCustomMetadata:
       entries: []
     nameFileIdTable:
-      item_spot_0: -7352249722563552029
-      item_spot_1: 2149215236595419214
+      skor_refrance_0: -7164842536867580292
+      skor_refrance_1: 2647111025694000222
+      skor_refrance_2: 6658852599766403621
+      skor_refrance_3: -827773880617210124
+      skor_refrance_4: -6166707526740892737
+      skor_refrance_5: 2184039156519337244
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 
