@@ -1,34 +1,40 @@
 fileFormatVersion: 2
-guid: 8ca12890fa0c82846b780ca16c369c59
+guid: e849e2decaece83499964d0d526cdd4b
 TextureImporter:
   internalIDToNameTable:
   - first:
-      213: -487605421300748779
-    second: Happy_Running_Animation_0
+      213: -5812601226941730317
+    second: Sad_Running_Animation_New_0
   - first:
-      213: 2290141450017559534
-    second: Happy_Running_Animation_1
+      213: 4052705904915023409
+    second: Sad_Running_Animation_New_1
   - first:
-      213: 7242180276754494247
-    second: Happy_Running_Animation_2
+      213: -2267247395127028304
+    second: Sad_Running_Animation_New_2
   - first:
-      213: -7783390735988783670
-    second: Happy_Running_Animation_3
+      213: -8210755029207938792
+    second: Sad_Running_Animation_New_3
   - first:
-      213: -2312737158858469366
-    second: Happy_Running_Animation_4
+      213: 4980646763588249019
+    second: Sad_Running_Animation_New_4
   - first:
-      213: -2919446143713008030
-    second: Happy_Running_Animation_5
+      213: -8964837709410578706
+    second: Sad_Running_Animation_New_5
   - first:
-      213: 5989514975976976421
-    second: Happy_Running_Animation_6
+      213: -4807640101207085487
+    second: Sad_Running_Animation_New_6
   - first:
-      213: -1211824971586971785
-    second: Happy_Running_Animation_7
+      213: 6632820865121171498
+    second: Sad_Running_Animation_New_7
   - first:
-      213: -3070864970520327390
-    second: Happy_Running_Animation_8
+      213: 4406213200995021404
+    second: Sad_Running_Animation_New_8
+  - first:
+      213: 4506532720358604692
+    second: Sad_Running_Animation_New_9
+  - first:
+      213: -8904007244370612406
+    second: Sad_Running_Animation_New_10
   externalObjects: {}
   serializedVersion: 13
   mipmaps:
@@ -96,10 +102,10 @@ TextureImporter:
   platformSettings:
   - serializedVersion: 4
     buildTarget: DefaultTexturePlatform
-    maxTextureSize: 8192
+    maxTextureSize: 2048
     resizeAlgorithm: 0
     textureFormat: -1
-    textureCompression: 2
+    textureCompression: 1
     compressionQuality: 50
     crunchedCompression: 0
     allowsAlphaSplitting: 0
@@ -109,6 +115,19 @@ TextureImporter:
     forceMaximumCompressionQuality_BC6H_BC7: 0
   - serializedVersion: 4
     buildTarget: Standalone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: Android
     maxTextureSize: 2048
     resizeAlgorithm: 0
     textureFormat: -1
@@ -133,30 +152,17 @@ TextureImporter:
     ignorePlatformSupport: 0
     androidETC2FallbackOverride: 0
     forceMaximumCompressionQuality_BC6H_BC7: 0
-  - serializedVersion: 4
-    buildTarget: WindowsStoreApps
-    maxTextureSize: 2048
-    resizeAlgorithm: 0
-    textureFormat: -1
-    textureCompression: 1
-    compressionQuality: 50
-    crunchedCompression: 0
-    allowsAlphaSplitting: 0
-    overridden: 0
-    ignorePlatformSupport: 0
-    androidETC2FallbackOverride: 0
-    forceMaximumCompressionQuality_BC6H_BC7: 0
   spriteSheet:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: Happy_Running_Animation_0
+      name: Sad_Running_Animation_New_0
       rect:
         serializedVersion: 2
         x: 0
         y: 0
-        width: 32
-        height: 64
+        width: 33
+        height: 61
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -165,20 +171,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: 51e60d8e37dab39f0800000000000000
-      internalID: -487605421300748779
+      spriteID: 3f173270bfd755fa0800000000000000
+      internalID: -5812601226941730317
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Happy_Running_Animation_1
+      name: Sad_Running_Animation_New_1
       rect:
         serializedVersion: 2
-        x: 33
+        x: 37
         y: 0
-        width: 32
-        height: 64
+        width: 23
+        height: 62
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -187,20 +193,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: ee3d1bdd38738cf10800000000000000
-      internalID: 2290141450017559534
+      spriteID: 13686916c8a1e3830800000000000000
+      internalID: 4052705904915023409
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Happy_Running_Animation_2
+      name: Sad_Running_Animation_New_2
       rect:
         serializedVersion: 2
-        x: 66
+        x: 69
         y: 0
-        width: 32
-        height: 64
+        width: 20
+        height: 62
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -209,20 +215,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: 723ba4b4794618460800000000000000
-      internalID: 7242180276754494247
+      spriteID: 0b5168ba18e1980e0800000000000000
+      internalID: -2267247395127028304
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Happy_Running_Animation_3
+      name: Sad_Running_Animation_New_3
       rect:
         serializedVersion: 2
-        x: 99
+        x: 98
         y: 0
-        width: 32
-        height: 64
+        width: 27
+        height: 63
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -231,20 +237,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: ac582512d57dbf390800000000000000
-      internalID: -7783390735988783670
+      spriteID: 8190f4aadc98d0e80800000000000000
+      internalID: -8210755029207938792
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Happy_Running_Animation_4
+      name: Sad_Running_Animation_New_4
       rect:
         serializedVersion: 2
-        x: 132
+        x: 131
         y: 0
-        width: 32
-        height: 64
+        width: 30
+        height: 62
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -253,20 +259,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: a001563bec187efd0800000000000000
-      internalID: -2312737158858469366
+      spriteID: bb56067c7dfce1540800000000000000
+      internalID: 4980646763588249019
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Happy_Running_Animation_5
+      name: Sad_Running_Animation_New_5
       rect:
         serializedVersion: 2
-        x: 165
+        x: 164
         y: 0
-        width: 32
-        height: 64
+        width: 33
+        height: 61
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -275,20 +281,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: 2662a1f333b0c77d0800000000000000
-      internalID: -2919446143713008030
+      spriteID: eee4e8dd99f769380800000000000000
+      internalID: -8964837709410578706
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Happy_Running_Animation_6
+      name: Sad_Running_Animation_New_6
       rect:
         serializedVersion: 2
-        x: 198
+        x: 199
         y: 0
-        width: 32
-        height: 64
+        width: 26
+        height: 62
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -297,20 +303,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: 5207df703280f1350800000000000000
-      internalID: 5989514975976976421
+      spriteID: 15ee0a7ccc4d74db0800000000000000
+      internalID: -4807640101207085487
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Happy_Running_Animation_7
+      name: Sad_Running_Animation_New_7
       rect:
         serializedVersion: 2
-        x: 231
+        x: 235
         y: 0
-        width: 32
-        height: 64
+        width: 17
+        height: 62
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -319,20 +325,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: 7775c9edb9bbe2fe0800000000000000
-      internalID: -1211824971586971785
+      spriteID: a28b8544f638c0c50800000000000000
+      internalID: 6632820865121171498
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Happy_Running_Animation_8
+      name: Sad_Running_Animation_New_8
       rect:
         serializedVersion: 2
-        x: 264
+        x: 268
         y: 0
-        width: 32
-        height: 64
+        width: 17
+        height: 62
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -341,8 +347,52 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: 22b02f654981265d0800000000000000
-      internalID: -3070864970520327390
+      spriteID: c52f1f9af83062d30800000000000000
+      internalID: 4406213200995021404
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Sad_Running_Animation_New_9
+      rect:
+        serializedVersion: 2
+        x: 299
+        y: 0
+        width: 25
+        height: 61
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 49f36ade1ab6a8e30800000000000000
+      internalID: 4506532720358604692
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Sad_Running_Animation_New_10
+      rect:
+        serializedVersion: 2
+        x: 329
+        y: 0
+        width: 30
+        height: 61
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: a4fe8c1369c9e6480800000000000000
+      internalID: -8904007244370612406
       vertices: []
       indices: 
       edges: []
@@ -351,7 +401,7 @@ TextureImporter:
     customData: 
     physicsShape: []
     bones: []
-    spriteID: 4b73d2fec0633544c95a0f9cf2c1ae58
+    spriteID: 
     internalID: 0
     vertices: []
     indices: 
@@ -361,15 +411,17 @@ TextureImporter:
     spriteCustomMetadata:
       entries: []
     nameFileIdTable:
-      Happy_Running_Animation_0: -487605421300748779
-      Happy_Running_Animation_1: 2290141450017559534
-      Happy_Running_Animation_2: 7242180276754494247
-      Happy_Running_Animation_3: -7783390735988783670
-      Happy_Running_Animation_4: -2312737158858469366
-      Happy_Running_Animation_5: -2919446143713008030
-      Happy_Running_Animation_6: 5989514975976976421
-      Happy_Running_Animation_7: -1211824971586971785
-      Happy_Running_Animation_8: -3070864970520327390
+      Sad_Running_Animation_New_0: -5812601226941730317
+      Sad_Running_Animation_New_1: 4052705904915023409
+      Sad_Running_Animation_New_10: -8904007244370612406
+      Sad_Running_Animation_New_2: -2267247395127028304
+      Sad_Running_Animation_New_3: -8210755029207938792
+      Sad_Running_Animation_New_4: 4980646763588249019
+      Sad_Running_Animation_New_5: -8964837709410578706
+      Sad_Running_Animation_New_6: -4807640101207085487
+      Sad_Running_Animation_New_7: 6632820865121171498
+      Sad_Running_Animation_New_8: 4406213200995021404
+      Sad_Running_Animation_New_9: 4506532720358604692
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

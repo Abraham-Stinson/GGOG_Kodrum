@@ -9,6 +9,7 @@ using UnityEngine.InputSystem;
 public class PlayerControllerScript : MonoBehaviour
 {
     public Animator animatior;
+    public bool hoodieOn;
     [Header("Movement Settings")]
     public float moveSpeed = 5f;
     public float jumpForce = 10f;
@@ -168,20 +169,37 @@ public class PlayerControllerScript : MonoBehaviour
 
     void Animation(){
         animatior.SetFloat("moveInput",Math.Abs(moveInput));
-        if(rb.linearVelocity.y>0.1){
-            animatior.SetBool("isJumping",true);
-        }
-        else{
-            animatior.SetBool("isJumping",false);
-        }
+        if(hoodieOn){
+            if(rb.linearVelocity.y>0.1){
+                animatior.SetBool("isJumpingHoodieOn",true);
+            }
+            else{
+                animatior.SetBool("isJumpingHoodieOn",false);
+            }
 
-        if(rb.linearVelocity.y<-0.1){
-            animatior.SetBool("isFalling",true);
+            if(rb.linearVelocity.y<-0.1){
+                animatior.SetBool("isFallingHoodieOn",true);
+            }
+            else{
+                animatior.SetBool("isFallingHoodieOn",false);
+            }
         }
         else{
-            animatior.SetBool("isFalling",false);
+            if(rb.linearVelocity.y>0.1){
+                animatior.SetBool("isJumpingHoodieOff",true);
+            }
+            else{
+                animatior.SetBool("isJumpingHoodieOff",false);
+            }
+
+            if(rb.linearVelocity.y<-0.1){
+                animatior.SetBool("isFallingHoodieOff",true);
+            }
+            else{
+                animatior.SetBool("isFallingHoodieOff",false);
+            }
         }
-        Debug.Log(rb.linearVelocity.y);
+        
     }
 
 }

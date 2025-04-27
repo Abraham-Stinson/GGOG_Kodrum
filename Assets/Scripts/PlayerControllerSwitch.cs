@@ -27,6 +27,7 @@ public class PlayerControllerSwitch : MonoBehaviour
         InputDevice tempScheme2;
         tempScheme1 = playerInput1.devices[0];
         tempScheme2 = playerInput2.devices[0];
+        player1Controller.hoodieOn=!player1Controller.hoodieOn;
         playerInput1.SwitchCurrentControlScheme(tempScheme2);
         playerInput2.SwitchCurrentControlScheme(tempScheme1);
         player1Controller.enabled=false;
