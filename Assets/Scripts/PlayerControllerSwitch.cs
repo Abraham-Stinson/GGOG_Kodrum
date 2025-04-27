@@ -30,24 +30,34 @@ public class PlayerControllerSwitch : MonoBehaviour
         player1Controller.hoodieOn=!player1Controller.hoodieOn;
         playerInput1.SwitchCurrentControlScheme(tempScheme2);
         playerInput2.SwitchCurrentControlScheme(tempScheme1);
+        player1Controller.GetComponent<Rigidbody2D>().linearVelocity = Vector2.zero;
+        player2Controller.GetComponent<Rigidbody2D>().linearVelocity = Vector2.zero;
         player1Controller.enabled=false;
         player2Controller.enabled=false;
 
         Animator animator=player1Controller.GetComponent<Animator>();
         if(player1StartingDevice==playerInput1.devices[0]){
-            animator.Play("Hoodie_Off");
+            animator.SetBool("isFallingHoodieOff", false);
+            animator.SetBool("isJumpFallingingHoodieOn", false);
+            animator.SetTrigger("Hoodie_Off");
             
         } 
         else{
-            animator.Play("Hoodie_On");
+            animator.SetBool("isFallingHoodieOff", false);
+            animator.SetBool("isFallingHoodieOff", false);
+            animator.SetTrigger("Hoodie_On");
         } 
         StartCoroutine(SwitchBreak(animator));
         
     }
 
     IEnumerator SwitchBreak(Animator animator){
-        yield return new WaitForSeconds(waitingSeconds); 
+        yield return new WaitForSeconds(waitingSeconds);
+        
         animator.ResetTrigger("SwitchOn");
+        animator.ResetTrigger("Hoodie_On");
+        animator.ResetTrigger("Hoodie_Off");
+
         player1Controller.enabled=true;
         player2Controller.enabled=true;
     }

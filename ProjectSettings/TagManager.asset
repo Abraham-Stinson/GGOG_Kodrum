@@ -14,6 +14,8 @@ TagManager:
   - Item_Hub
   - ItemPlayer1
   - ItemPlayer2
+  - Item
+  - PlayerSwitch
   layers:
   - Default
   - TransparentFX

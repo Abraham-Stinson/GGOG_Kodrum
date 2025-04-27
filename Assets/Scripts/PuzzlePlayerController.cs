@@ -11,12 +11,14 @@ public class PuzzlePlayerController : MonoBehaviour
     private Vector2 moveInput;
     public PlayerControllerSwitch playerControllerSwitch;
     public PuzzleManager puzzleManager;
+    private Rigidbody2D rb;
 
 
     private void Start()
     {
         player2StartingDevice = playerInput.devices[0];
-        
+        rb = GetComponent<Rigidbody2D>();
+
     }
     void Update()
     {
@@ -33,7 +35,7 @@ public class PuzzlePlayerController : MonoBehaviour
         //placeholder code to test sw�tch
         if (value.isPressed)
         {
-            playerControllerSwitch.SwitchControl();
+            puzzleManager.ResetPuzzle();
         }
         
     }
@@ -41,8 +43,8 @@ public class PuzzlePlayerController : MonoBehaviour
     private void Move()
     {
 
-        Vector3 movement = new Vector2(moveInput.x, moveInput.y);
-        transform.Translate(movement * moveSpeed * Time.deltaTime);
+        Vector2 movement = moveInput.normalized * moveSpeed;
+        rb.linearVelocity = movement;
     }
 
     

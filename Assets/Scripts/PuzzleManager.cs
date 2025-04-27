@@ -1,3 +1,4 @@
+using System.Collections;
 using System.Collections.Generic;
 using NUnit.Framework;
 using Unity.VisualScripting;
@@ -23,8 +24,14 @@ public class PuzzleManager : MonoBehaviour
         playerCheckpoint = GameObject.FindWithTag("PlayerCheckpoint").transform;
         boxCheckpoint = GameObject.FindWithTag("BoxCheckpoint").transform;
         boxPosition = GameObject.FindWithTag("Box").transform;
+        MovePlayerToCheckpoint();
     }
-
+    private IEnumerator DelayedFindCheckpoint()
+    {
+        yield return new WaitForEndOfFrame();  // Wait until the next frame
+        FindCheckpoint();
+        
+    }
 
     public void ResetPuzzle()
     {
@@ -41,8 +48,8 @@ public class PuzzleManager : MonoBehaviour
         }
         int listIndex = Random.Range(0, puzzles.Count);
         Instantiate(puzzles[listIndex], this.transform.localPosition, Quaternion.identity, this.transform);
-        FindCheckpoint();
-        MovePlayerToCheckpoint();
+        StartCoroutine(DelayedFindCheckpoint());
+        
     }
 
 

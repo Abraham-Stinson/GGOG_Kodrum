@@ -6,7 +6,7 @@ public class Box : MonoBehaviour
     [SerializeField]private PlayerControllerSwitch playerControllerSwitch;
     private void Start()
     {
-        
+        playerControllerSwitch = GameObject.FindGameObjectWithTag("PlayerSwitch").GetComponent<PlayerControllerSwitch>();
     }
     private void OnTriggerEnter2D(Collider2D collision)
     {
