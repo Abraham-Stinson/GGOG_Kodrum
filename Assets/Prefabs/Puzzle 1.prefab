@@ -9,6 +9,18 @@ PrefabInstance:
     m_TransformParent: {fileID: 0}
     m_Modifications:
     - target: {fileID: 1433222818526593908, guid: b33a3a44c6b24f9488ed92a8ab83943a, type: 3}
+      propertyPath: m_LocalScale.x
+      value: 0.11
+      objectReference: {fileID: 0}
+    - target: {fileID: 1433222818526593908, guid: b33a3a44c6b24f9488ed92a8ab83943a, type: 3}
+      propertyPath: m_LocalScale.y
+      value: 0.11
+      objectReference: {fileID: 0}
+    - target: {fileID: 1433222818526593908, guid: b33a3a44c6b24f9488ed92a8ab83943a, type: 3}
+      propertyPath: m_LocalScale.z
+      value: 0.11
+      objectReference: {fileID: 0}
+    - target: {fileID: 1433222818526593908, guid: b33a3a44c6b24f9488ed92a8ab83943a, type: 3}
       propertyPath: m_LocalPosition.x
       value: 0.69
       objectReference: {fileID: 0}
@@ -71,6 +83,18 @@ PrefabInstance:
     - target: {fileID: 5130870884291316947, guid: b33a3a44c6b24f9488ed92a8ab83943a, type: 3}
       propertyPath: m_Name
       value: Puzzle 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 6438742484085315884, guid: b33a3a44c6b24f9488ed92a8ab83943a, type: 3}
+      propertyPath: m_LocalScale.x
+      value: 0.11
+      objectReference: {fileID: 0}
+    - target: {fileID: 6438742484085315884, guid: b33a3a44c6b24f9488ed92a8ab83943a, type: 3}
+      propertyPath: m_LocalScale.y
+      value: 0.11
+      objectReference: {fileID: 0}
+    - target: {fileID: 6438742484085315884, guid: b33a3a44c6b24f9488ed92a8ab83943a, type: 3}
+      propertyPath: m_LocalScale.z
+      value: 0.11
       objectReference: {fileID: 0}
     - target: {fileID: 6438742484085315884, guid: b33a3a44c6b24f9488ed92a8ab83943a, type: 3}
       propertyPath: m_LocalPosition.x
@@ -155,7 +179,7 @@ BoxCollider2D:
   m_UsedByEffector: 0
   m_CompositeOperation: 0
   m_CompositeOrder: 0
-  m_Offset: {x: -0.8782084, y: 0}
+  m_Offset: {x: -1.3404893, y: 0}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.5, y: 0.5}
@@ -165,7 +189,7 @@ BoxCollider2D:
     drawMode: 0
     adaptiveTiling: 0
   m_AutoTiling: 0
-  m_Size: {x: 0.0001, y: 1.5}
+  m_Size: {x: 0.9325979, y: 1.5}
   m_EdgeRadius: 0
 --- !u!61 &6819799116928333396
 BoxCollider2D:
