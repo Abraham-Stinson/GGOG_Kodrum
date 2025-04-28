@@ -68,9 +68,25 @@ PrefabInstance:
       propertyPath: m_Sprite
       value: 
       objectReference: {fileID: 1100513084814602481, guid: 99e306f2d31e30b4d999586cb0842a97, type: 3}
+    - target: {fileID: 4174749849775411123, guid: b33a3a44c6b24f9488ed92a8ab83943a, type: 3}
+      propertyPath: m_SortingOrder
+      value: 12
+      objectReference: {fileID: 0}
     - target: {fileID: 5130870884291316947, guid: b33a3a44c6b24f9488ed92a8ab83943a, type: 3}
       propertyPath: m_Name
       value: Puzzle 4
+      objectReference: {fileID: 0}
+    - target: {fileID: 6438742484085315884, guid: b33a3a44c6b24f9488ed92a8ab83943a, type: 3}
+      propertyPath: m_LocalScale.x
+      value: 0.05
+      objectReference: {fileID: 0}
+    - target: {fileID: 6438742484085315884, guid: b33a3a44c6b24f9488ed92a8ab83943a, type: 3}
+      propertyPath: m_LocalScale.y
+      value: 0.05
+      objectReference: {fileID: 0}
+    - target: {fileID: 6438742484085315884, guid: b33a3a44c6b24f9488ed92a8ab83943a, type: 3}
+      propertyPath: m_LocalScale.z
+      value: 0.05
       objectReference: {fileID: 0}
     - target: {fileID: 6438742484085315884, guid: b33a3a44c6b24f9488ed92a8ab83943a, type: 3}
       propertyPath: m_LocalPosition.x
@@ -87,6 +103,10 @@ PrefabInstance:
     - target: {fileID: 9064357880399144220, guid: b33a3a44c6b24f9488ed92a8ab83943a, type: 3}
       propertyPath: m_LocalPosition.y
       value: -0.165
+      objectReference: {fileID: 0}
+    - target: {fileID: 9220166631255006995, guid: b33a3a44c6b24f9488ed92a8ab83943a, type: 3}
+      propertyPath: m_SortingOrder
+      value: 12
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []

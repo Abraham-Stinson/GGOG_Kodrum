@@ -12,7 +12,7 @@ public class ButtonScript : MonoBehaviour
 
     // Update is called once per frame
     public void LoadGame(){
-        SceneManager.LoadScene("Game");//Oyun
+        SceneManager.LoadScene("SampleScene");//Oyun
     }
     public void Credits(){
         //Oyun
