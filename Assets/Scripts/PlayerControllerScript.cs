@@ -187,4 +187,11 @@ public class PlayerControllerScript : MonoBehaviour
         
     }
 
+    private void OnDrawGizmosSelected()
+    {
+        Gizmos.color = Color.green;
+        Vector2 detectionPoint = (Vector2)groundCheck.position;
+        Gizmos.DrawWireSphere(detectionPoint, groundCheckRadius);
+    }
+
 }
