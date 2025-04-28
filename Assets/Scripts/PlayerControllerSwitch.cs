@@ -1,5 +1,4 @@
 using System.Collections;
-using UnityEditor.Animations;
 using UnityEngine;
 using UnityEngine.InputSystem;
 
@@ -12,8 +11,9 @@ public class PlayerControllerSwitch : MonoBehaviour
     private PlayerInput playerInput1;
     private PlayerInput playerInput2;
     [SerializeField]private float waitingSeconds=0.4f;
-    public AnimatorController hoodieOnAnimations;
-    public AnimatorController hoodieOffAnimations;
+    public RuntimeAnimatorController  hoodieOnAnimations;
+    public RuntimeAnimatorController  hoodieOffAnimations;
+    [SerializeField] private AudioScript audioScript;
     
 
     private void Start()
@@ -66,6 +66,7 @@ public class PlayerControllerSwitch : MonoBehaviour
                 player1Controller.animator.runtimeAnimatorController = hoodieOffAnimations;
             }
         } 
+        audioScript.PlaySFX(2);
         StartCoroutine(SwitchBreak(animator));
         
     }

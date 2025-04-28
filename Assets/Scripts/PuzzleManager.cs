@@ -16,6 +16,7 @@ public class PuzzleManager : MonoBehaviour
 
     private void Start()
     {
+        //SpawnRandomPuzzle();
         FindCheckpoint();
     }
 

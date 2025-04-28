@@ -8,6 +8,7 @@ using UnityEngine.InputSystem;
 [RequireComponent(typeof(Rigidbody2D))]
 public class PlayerControllerScript : MonoBehaviour
 {
+    [Header ("Animation")]
     public Animator animator;
     public bool hoodieOn;
     
@@ -42,13 +43,12 @@ public class PlayerControllerScript : MonoBehaviour
     public GameObject itemPlayer1;
     public GameObject itemPlayer2;
     public SpriteRenderer itemSpriteRenderer;
+    [Header("SFX")]
+    [SerializeField] private AudioScript audioScript;
 
     private void Awake()
     {
         rb = GetComponent<Rigidbody2D>();
-
-
-
     }
     void Start()
     {
@@ -122,6 +122,7 @@ public class PlayerControllerScript : MonoBehaviour
         if (value.isPressed && IsGrounded())
         {
             isJumping = true;
+            audioScript.PlaySFX(0);
         }
     }
 
